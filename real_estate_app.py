@@ -5,11 +5,21 @@ import streamlit as st
 from sklearn.linear_model import LogisticRegression
 
 # Load trained model
-try:
-    model = joblib.load("real_estate_model.pkl")
-except FileNotFoundError:
-    st.error("Model file not found. Please make sure 'real_estate_model.pkl' exists in the same directory.")
-    st.stop()
+@st.cache_resource
+def load_model():
+    try:
+        model = joblib.load("real_estate_model.pkl")
+        st.success("✅ Trained model loaded successfully!")
+        return model
+    except FileNotFoundError:
+        st.error("❌ Model file 'real_estate_model.pkl' not found!")
+        st.error("Please ensure the trained model file is in the repository.")
+        st.stop()
+    except Exception as e:
+        st.error(f"❌ Error loading model: {e}")
+        st.stop()
+
+model = load_model()
 
 st.title("🏡 Real Estate Sale Probability Predictor")
 
