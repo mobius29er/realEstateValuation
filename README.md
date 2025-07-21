@@ -80,6 +80,18 @@ real_estate/
    streamlit run real_estate_app.py
    ```
 
+## 🌐 Streamlit Cloud Deployment
+
+To deploy this app on Streamlit Cloud:
+
+1. **Fork or clone** this repository to your GitHub account
+2. **Visit** [share.streamlit.io](https://share.streamlit.io)
+3. **Connect your GitHub** account and select this repository
+4. **Set the main file path** to: `real_estate_app.py`
+5. **Deploy** - Streamlit Cloud will automatically install dependencies from `requirements.txt`
+
+**Live Demo**: The app can be deployed and accessed via Streamlit Cloud for interactive demonstrations.
+
 ## 💡 Usage
 
 ### Jupyter Notebook
